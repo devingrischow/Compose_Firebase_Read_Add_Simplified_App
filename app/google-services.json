@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570782512618",
+    "project_id": "easyeats-demodatabase",
+    "storage_bucket": "easyeats-demodatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570782512618:android:73c3c57de41575b9f3ee93",
+        "android_client_info": {
+          "package_name": "com.example.compose_firebase_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMYTzckVurSlsipN06MwR6vccEqfvW17M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
