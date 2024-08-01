@@ -8,7 +8,7 @@ import com.google.firebase.firestore.DocumentId
 //This specificaly is a FOOD OBJECT
 data class Food(
     @DocumentId val docID:String? = null,
-    val foodName:String? = "Loading..",
+    val foodName:String? = "Loading...",
     val image:String? = "",
     val calories:Double? = 0.0
 )

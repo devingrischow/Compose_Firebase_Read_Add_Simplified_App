@@ -66,8 +66,9 @@ import kotlinx.coroutines.withContext
 ////only display once the button is pressed
 
 @Composable
-fun ReviewARandomFoodScreen(coroutineScope: CoroutineScope){
+fun ReviewARandomFoodScreen(){
 
+    val coroutineScope = rememberCoroutineScope()
 
     val geoConfig = LocalConfiguration.current
 
@@ -100,7 +101,7 @@ fun ReviewARandomFoodScreen(coroutineScope: CoroutineScope){
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center,
             modifier = Modifier
-                .padding(bottom = 25.dp, top = 100.dp)
+                .padding(bottom = 25.dp, top = 50.dp)
                 .width(350.dp)
 
         )
@@ -141,7 +142,7 @@ fun ReviewARandomFoodScreen(coroutineScope: CoroutineScope){
 
 
         //Image Area
-
+        //https://stackoverflow.com/questions/68919900/screen-width-and-height-in-jetpack-compose
         AsyncImage(
             //Load in the Image
             model = beingPresentedFood.image ,
@@ -235,5 +236,5 @@ suspend fun fetchRandomFoodFromFirebase(): Food {
 @Preview(showBackground = true)
 @Composable
 fun PreviewFoodReviewScreen(){
-    ReviewARandomFoodScreen(rememberCoroutineScope())
+    ReviewARandomFoodScreen()
 }

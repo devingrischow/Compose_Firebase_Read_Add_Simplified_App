@@ -33,6 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.compose_firebase_app.screens.AddAReviewToAFoodScreen
 import com.example.compose_firebase_app.screens.ReviewARandomFoodScreen
 import com.example.compose_firebase_app.ui.theme.Compose_Firebase_AppTheme
 import kotlinx.coroutines.CoroutineScope
@@ -46,11 +47,11 @@ class MainActivity : ComponentActivity() {
             //Declare a Co Routine Scope for the App
 
             // Use rememberCoroutineScope to launch the function in a coroutine
-            val coroutineScope = rememberCoroutineScope()
+//            val coroutineScope = rememberCoroutineScope()
 
             Compose_Firebase_AppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FirebaseDataPreviewScreen(coroutineScope,innerPadding)
+                    FirebaseDataPreviewScreen(innerPadding)
                 }
             }
         }
@@ -60,7 +61,7 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun FirebaseDataPreviewScreen(coroutineScope: CoroutineScope,innerPadding: PaddingValues) {
+fun FirebaseDataPreviewScreen(innerPadding: PaddingValues) {
 
 
 
@@ -148,12 +149,13 @@ fun FirebaseDataPreviewScreen(coroutineScope: CoroutineScope,innerPadding: Paddi
         //This Area Houses the If Chain and what to do next
 
         if (isReviewPressed) {
-            ReviewARandomFoodScreen(coroutineScope)
+
+            ReviewARandomFoodScreen()
+
         } else {
-            Text(
-                text = "Monkee",
-                color = Color.Blue
-            )
+
+            AddAReviewToAFoodScreen()
+
         }
 
 
@@ -169,7 +171,7 @@ fun FirebaseDataPreviewScreen(coroutineScope: CoroutineScope,innerPadding: Paddi
 @Composable
 fun ScreenPreview() {
     Compose_Firebase_AppTheme {
-        FirebaseDataPreviewScreen(rememberCoroutineScope(),PaddingValues.Absolute())
+        FirebaseDataPreviewScreen(PaddingValues.Absolute())
     }
 }
 
